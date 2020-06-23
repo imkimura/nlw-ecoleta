@@ -1,11 +1,10 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/users', (req, res) => {
-    console.log('Hello People');
+app.use(express.json());
 
-    res.json({'result':'Hello World!'});
-});
+app.use(routes);
 
 app.listen(3333);
